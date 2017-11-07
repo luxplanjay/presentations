@@ -1,0 +1,11 @@
+.bg-img {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.intro {
+  background-image: url('pictures/git-logo.png'), url('pictures/github-logo.png');
+  background-size: 70%;
+  background-position: top, bottom;
+}
