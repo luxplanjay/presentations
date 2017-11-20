@@ -1,0 +1,19 @@
+.bg-img {
+  position: relative;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.intro {
+  background-image: url('pictures/intro.png');
+  background-size: 50%;
+  background-position: center;
+  background-color: #FFC107;
+}
+
+.image {
+  display: block;
+  margin: auto;
+  width: 50%;
+  height: auto;
+}

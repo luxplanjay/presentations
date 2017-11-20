@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>Git</title>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="shower/themes/ribbon/styles/screen-16x10.css">
+  <link rel="stylesheet" href="style.css">
+</head>
+
+<body class="shower list">
+
+  <section class="slide intro bg-img"></section>
+
+  <section class="slide">
+    <h2>Grid track</h2>
+    <p>
+      <strong>Grid Track</strong> - пространство между двумя Grid Lines. Track может быть
+      горизонтальный или вертикальный (строка или колонка).</p>
+    <img class="image" src="pictures/grid-track.png" alt="">
+  </section>
+
+  <section class="slide">
+    <h2>Grid Line</h2>
+    <p>
+      <strong>Grid Line</strong> - при создании Track мы получаем Lines. Line может быть
+      горизонтальной или вертикальной. Lines нумерованы начиная с 1.</p>
+    <img class="image" src="pictures/grid-line.png" alt="">
+  </section>
+
+  <section class="slide">
+    <h2>Grid Cell</h2>
+    <p>
+      <strong>Grid Cell</strong> - наименьшая единица сетки. Это расстояние между четырьмя
+      Grid Lines. Очень похоже на Table Cell.</p>
+    <img class="image" src="pictures/grid-cell.png" alt="">
+  </section>
+
+  <section class="slide">
+    <h2>Grid Area</h2>
+    <p>
+      <strong>Grid Area</strong> - любая область сетки ограниченая 4-мя Grid Lines, может
+      содержать множество Grid Cell.</p>
+    <img class="image" src="pictures/grid-area.png" alt="">
+  </section>
+
+  <section class="slide">
+    <h2>Defining a grid</h2>
+    <p>
+      <code>display: grid</code> - объявляет элемент как Grid. Все непосредсвенные дети
+      становятся Grid Items.</p>
+    <p>
+      <code>grid-template-columns</code> и
+      <code>grid-template-rows</code> - объявляют явную сетку (Explicit Grid).</p>
+    <p>
+      <code>grid-gap</code> - задает пространство между Tracks.</p>
+    <a href="https://codepen.io/Zerk/pen/yPvXwz?editors=1100" target="_blank">Пример</a>
+  </section>
+  <section class="slide">
+    <h2>Fractions</h2>
+    <p>
+      <strong>Fraction (fr, доля, фракция)</strong> - представляет долю доступного пространства
+      в grid-контейнере для Track. Похоже на flex-basis.
+    </p>
+
+    <pre>
+      <code>grid-template-columns: 1fr 1fr 1fr;</code>
+      <code>grid-template-columns: 400px 1fr 1fr;</code>
+    </pre>
+  </section>
+
+  <section class="slide">
+    <h2>Repeat</h2>
+    <p>
+      <strong>repeat</strong> - позволяет задавать повторяющиеся патерны из Tracks.</p>
+    <code>grid-template-columns: repeat(3, 1fr);</code>
+  </section>
+
+  <section class="slide">
+    <h2>Implicit grid</h2>
+    <p>Явная сетка это та, которую мы указываем в CSS. Неявная сетка это та, которую
+      CSS grid создаст автоматически для того, чтобы вместить контент.</p>
+    <p>К примеру если мы явно не укажет
+      <code>grid-template-rows</code>, CSS grid автоматически создаст горизонтальные Tracks
+      под контент. Эти Tracks будут иметь автоматические размеры, зависящие от контента.</p>
+    <p>
+      <code>grid-auto-rows</code> и
+      <code>grid-auto-columns</code> задают размеры для не явно созданых Tracks.</p>
+  </section>
+
+  <section class="slide">
+    <h2>auto-fill &amp; minmax</h2>
+    <p>
+      <code>repeat(auto-fill, 200px)</code> - говорит контейнеру о необходимости создать
+      любое кол-во Tracks определенного размера.
+    </p>
+    <p>
+      <code>repeat(auto-fill, minmax(200px, 1fr))</code> - создает респонсив grid. Первый
+      аргумент - минимальный размер Track, второй - максимальный. Если второй аргумент
+      равен 1fr, Track займет доступное пространство.</p>
+
+    <a href="https://codepen.io/Zerk/pen/ooEoxy?editors=1100" target="_blank">Пример</a>
+  </section>
+
+  <section class="slide">
+    <h2>Line numbers</h2>
+    <p>Для размешения контента на гриде можно указать от какой до какой линии ему разместиться.</p>
+    <a href="https://codepen.io/Zerk/pen/ooEowP?editors=0100" target="_blank">Пример</a>
+  </section>
+
+  <section class="slide">
+    <h2>Defining grid areas</h2>
+    <p>
+      <code>grid-area: имя</code> - определяет Grid Area с указанным именем.</p>
+    <p>
+      <code>grid-template-areas: ""</code> - описывает расположение контента в сетке как
+      ASCII art, используя имена Grid Area. &#x1F603;</p>
+    <a href="https://codepen.io/Zerk/pen/ooEoMJ?editors=1100" target="_blank">Пример</a>
+  </section>
+
+  <section class="slide">
+    <h2>Примеры</h2>
+    <ul>
+      <li>
+        <a href="https://codepen.io/Zerk/pen/LOQOqq?editors=1100" target="_blank">Two column layout</a>
+      </li>
+      <li>
+        <a href="https://codepen.io/Zerk/pen/yPvpMj?editors=0100" target="_blank">Two column responsive layout</a>
+      </li>
+      <li>
+        <a href="https://codepen.io/Zerk/pen/EbQowJ?editors=0100" target="_blank">Two column named areas layout</a>
+      </li>
+      <li>
+        <a href="https://codepen.io/Zerk/pen/jaZZQN?editors=0100" target="_blank">Moving stuff around</a>
+      </li>
+      <li>
+        <a href="https://codepen.io/Zerk/pen/mqXjea?editors=0100" target="_blank">Grid playground</a>
+      </li>
+    </ul>
+  </section>
+
+  <div class="progress"></div>
+
+  <script src="shower/shower.min.js"></script>
+</body>
+
+</html>
